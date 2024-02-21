@@ -1,17 +1,20 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Switch } from "react-native";
 import { Text } from "react-native-rapi-ui";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../components/navigation/ThemeContext";
 
 export default function Profile() {
     const { isDarkMode, toggleDarkMode } = useTheme();
 
     return (
         <SafeAreaView style={[styles.container, isDarkMode && styles.darkContainer]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkSectionTitle]}>Profile</Text>
+            <Text style={styles.sectionTitle}>Profile</Text>
             <Switch
                 value={isDarkMode}
                 onValueChange={toggleDarkMode}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={isDarkMode ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
             />
         </SafeAreaView>
     );
@@ -20,22 +23,16 @@ export default function Profile() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: "white", // Default light background color
     },
     darkContainer: {
-        backgroundColor: "#000",
+        backgroundColor: "black", // Dark background color
     },
     sectionTitle: {
         fontSize: 30,
         fontWeight: "bold",
         marginBottom: 7,
         textAlign: "left",
-        color: "#fff", // Change color to match your dark theme
-    },
-    darkSectionTitle: {
-        color: "#000", // Change color to match your dark theme
+        color: "black", // Default text color
     },
 });
-  

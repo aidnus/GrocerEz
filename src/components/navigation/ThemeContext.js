@@ -6,9 +6,7 @@ export const ThemeProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        // You can save this state to AsyncStorage or any other storage mechanism
-        // and use it to persist the theme across app restarts
+        setIsDarkMode((prev) => !prev);
     };
 
     return (

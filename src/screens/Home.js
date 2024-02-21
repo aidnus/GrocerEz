@@ -1,13 +1,14 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { Layout, Text } from "react-native-rapi-ui";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../components/navigation/ThemeContext";
 
-export default function () {
+export default function Home() {
     const { isDarkMode } = useTheme();
+
     return (
         <SafeAreaView style={[styles.container, isDarkMode && styles.darkContainer]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkSectionTitle]}>Home</Text>
+            <Text style={styles.sectionTitle}>Home</Text>
         </SafeAreaView>
     );
 }
@@ -15,22 +16,17 @@ export default function () {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: "white", // Default light background color
     },
     darkContainer: {
-        backgroundColor: "#000",
+        backgroundColor: "black", // Dark background color
     },
     sectionTitle: {
         fontSize: 30,
         fontWeight: "bold",
         marginBottom: 7,
         textAlign: "left",
-        color: "#000", // Default color for light mode
-    },
-    darkSectionTitle: {
-        color: "#fff", // Color for dark mode
+        color: "black", // Default text color
     },
 });
   
