@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white", // Default light background color
     },
     darkContainer: {
-        backgroundColor: "black", // Dark background color
+        backgroundColor: "grey", // Dark background color
     },
     sectionTitle: {
         fontSize: 30,
